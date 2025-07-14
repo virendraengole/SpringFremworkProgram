@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:c="http://www.springframework.org/schema/c"
+        xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+
+
+                <util:map id="studMap">
+                    <entry  key="1" value="pune"></entry>
+                    <entry  key="2" value="delhi"></entry>
+                    <entry  key="3" value="lakhnav"></entry>
+                    <entry  key="4" value="chandigarh"></entry>
+                </util:map>
+
+                <util:list id="studList">
+                    <value>mumbai</value>
+                    <value>pune</value>
+                    <value>lakhnav</value>
+                    <value>chandigarh</value>
+                </util:list>
+
+
+                <util:set id="studSet">
+                    <value>mumbai</value>
+                    <value>pune</value>
+                    <value>lakhnav</value>
+                    <value>chandigarh</value>
+                </util:set>
+
+        <bean id="studentBean" class="org.evolveware.Student" p:studentAdd2-ref="studMap" p:studentAdd-ref="studList" p:studentAdd1="studSet" p:studentId="1" p:studentName="Viru" >
+            <!--Normal way-->
+
+            <!--<property name="studentAdd2">
+                  <list>
+                       <value>pune</value>
+                       <value>delhi</value>
+                       <value>lakhnav</value>
+                       <value>chandigarh</value>
+                   </list>
+
+                  <set>
+                       <value>pune</value>
+                       <value>delhi</value>
+                       <value>lakhnav</value>
+                       <value>chandigarh</value>
+                   </set>
+                </property>-->
+        </bean>
+
+
+    </beans>
