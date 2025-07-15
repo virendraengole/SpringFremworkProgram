@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:c="http://www.springframework.org/schema/c"
+        xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+
+
+
+
+
+    <!--First Way-->
+    <!--<bean class="org.evolveware.Certificate" id="certificate">
+        <constructor-arg name="certName"> <value>MCA</value>  </constructor-arg>
+     </bean>
+    <bean class="org.evolveware.Person" id="person">
+        <constructor-arg name="perId" ><value>1</value></constructor-arg>
+        <constructor-arg name="perName"> <value>Viru</value></constructor-arg>
+        <constructor-arg name="cert" ref="certificate" >  </constructor-arg>
+    </bean>-->
+    <!--2rd Way-->
+    <bean class="org.evolveware.Certificate" id="certificate" c:certName="MCA" />
+    <bean class="org.evolveware.Person" id="person" c:_0="1" c:_1="Viru" c:_2-ref="certificate" />
+
+</beans>
