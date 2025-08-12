@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:c="http://www.springframework.org/schema/c"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:util="http://www.springframework.org/schema/util"
+        xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+            <!--
+            How it works: Spring looks for a bean with a type that matches the property type of
+             the bean where the dependency is to be injected.
+            Requirement: There must be exactly one bean of the required type in the container.
+              If multiple beans of the same type exist, Spring will throw an exception.-->
+            <!--  <bean class="org.evolveware.Address" name="sAddress1" p:city="pune" p:street="bhosari" />
+             <bean class="org.evolveware.Student" name="student" p:sId="1" p:sName="shree" autowire="byType"  />-->
+
+    <!--How it works: Spring looks for a bean with a name that matches the property name of
+        the bean where the dependency is to be injected.
+        Requirement: The property name in the bean must match the name of another bean defined in the XML.-->
+    <!--<bean class="org.evolveware.Address" name="sAddress1" p:city="pune" p:street="bhosari" />
+    <bean class="org.evolveware.Address" name="sAddress" p:city="pune" p:street="dighi" />
+    <bean class="org.evolveware.Student" name="student" p:sId="1" p:sName="shree" autowire="byName"  />-->
+
+
+    <bean class="org.evolveware.Address" name="address" >
+        <constructor-arg name="city" value="pune1" />
+        <constructor-arg name="street" value="bhosari1" />
+    </bean>
+
+
+    <bean class="org.evolveware.Student" name="student" autowire="constructor" >
+        <constructor-arg name="sId" value="1" />
+        <constructor-arg name="sName" value="Shree" />
+
+    </bean>
+</beans>
